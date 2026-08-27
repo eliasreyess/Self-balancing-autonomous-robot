@@ -1,0 +1,144 @@
+<h2>Self-Balancing Autonomous Maze Robot</h2>
+
+<!-- Replace ENTER-MAIN-ROBOT-IMAGE.jpg with your image filename -->
+<p align="center">
+  <img src="assets/ENTER-MAIN-ROBOT-IMAGE.jpg"
+       alt="Completed self-balancing autonomous robot"
+       style="max-width: 75%; height: auto;"><br>
+  <em>Fig. 1 Completed self-balancing robot with ultrasonic sensors and an electromagnet attachment.</em>
+</p>
+
+<p>
+  I developed this self-balancing autonomous robot as the final project for
+  <strong>ME 331: Mechatronics</strong>. The primary objective was to create a
+  two-wheeled robot capable of maintaining its balance while autonomously
+  navigating a maze. The robot was also required to locate, pick up, transport,
+  and retrieve an object using a front-mounted electromagnet.
+</p>
+
+<p>
+  The project integrated mechanical assembly, embedded programming, sensor
+  feedback, wireless communication, and closed-loop control. Unlike a
+  conventional four-wheeled robot, this platform had to continuously correct
+  its wheel motion to remain upright while simultaneously processing distance
+  measurements and navigation commands.
+</p>
+
+<h3>Self-Balancing Control</h3>
+
+<!-- Replace ENTER-BALANCING-VIDEO.mp4 with your video filename -->
+<p align="center">
+  <video controls muted playsinline
+         style="max-width: 75%; height: auto;">
+    <source src="assets/ENTER-BALANCING-VIDEO.mp4" type="video/mp4">
+    Your browser does not support embedded video.
+  </video><br>
+  <em>Fig. 2 Closed-loop balancing test demonstrating the robot maintaining an upright position.</em>
+</p>
+
+<p>
+  The balancing system used a PID control loop to continuously correct the
+  robot’s body angle through its two drive motors. PID gains and encoder pulse
+  rates were experimentally tuned until the robot could remain stable and move
+  without tipping over. This control system provided the foundation for all
+  autonomous navigation and object-retrieval operations.
+</p>
+
+<h3>Autonomous Maze Navigation</h3>
+
+<!-- Replace ENTER-MAZE-VIDEO.mp4 with your video filename -->
+<p align="center">
+  <video controls muted playsinline
+         style="max-width: 85%; height: auto;">
+    <source src="assets/ENTER-MAZE-VIDEO.mp4" type="video/mp4">
+    Your browser does not support embedded video.
+  </video><br>
+  <em>Fig. 3 Autonomous maze-navigation test using ultrasonic obstacle detection.</em>
+</p>
+
+<p>
+  Ultrasonic sensors measured the distance between the robot and surrounding
+  obstacles. These measurements allowed the control program to identify walls,
+  avoid collisions, and select movement directions while traveling through the
+  maze. A servo motor adjusted the orientation of the upper ultrasonic sensor,
+  allowing the robot to inspect different directions before selecting a path.
+</p>
+
+<p>
+  Two Arduino Nano microcontrollers divided the sensing and control workload.
+  Communication logic was developed to transfer distance and movement data
+  reliably between the controllers. Fixed-length responses, bounded sensor
+  values, and checksum validation were used to prevent incomplete or corrupted
+  data from producing incorrect robot movements.
+</p>
+
+<h3>Electromagnetic Object Retrieval</h3>
+
+<!-- Replace ENTER-ELECTROMAGNET-IMAGE.jpg with your image filename -->
+<p align="center">
+  <img src="assets/ENTER-ELECTROMAGNET-IMAGE.jpg"
+       alt="Electromagnet object-retrieval attachment"
+       style="max-width: 75%; height: auto;"><br>
+  <em>Fig. 4 Front-mounted electromagnet and object-retrieval mechanism.</em>
+</p>
+
+<p>
+  A front-mounted electromagnet allowed the robot to collect and transport a
+  metal target. Because the electromagnet required more current than an Arduino
+  output could safely provide, it was switched through a MOSFET control circuit.
+  This allowed the program to activate and deactivate the magnet at the correct
+  stages of the retrieval sequence.
+</p>
+
+<!-- Replace ENTER-RETRIEVAL-VIDEO.mp4 with your video filename -->
+<p align="center">
+  <video controls muted playsinline
+         style="max-width: 85%; height: auto;">
+    <source src="assets/ENTER-RETRIEVAL-VIDEO.mp4" type="video/mp4">
+    Your browser does not support embedded video.
+  </video><br>
+  <em>Fig. 5 Object pickup, transportation, and retrieval using the electromagnet.</em>
+</p>
+
+<h3>Engineering Achievements</h3>
+
+<ul>
+  <li>Implemented and tuned PID control for a two-wheeled self-balancing platform.</li>
+  <li>Developed autonomous maze-navigation logic using ultrasonic distance measurements.</li>
+  <li>Integrated two Arduino Nano microcontrollers for distributed sensing and control.</li>
+  <li>Improved communication reliability using bounded sensor values, fixed-length responses, and checksum validation.</li>
+  <li>Integrated encoder feedback, ultrasonic sensors, RF communication, and servo actuation.</li>
+  <li>Designed a MOSFET switching circuit to safely control the electromagnet.</li>
+  <li>Demonstrated autonomous object pickup, transportation, and retrieval.</li>
+</ul>
+
+<h3>My Contributions</h3>
+
+<p>
+  My contributions included assembling the robot, verifying the wiring and
+  schematics, and tuning the control values required for stable balancing. I
+  developed the base autonomous-control code, integrated the ultrasonic sensors
+  and servo motor, and programmed the RF communication and electromagnet
+  controls. I also tested and debugged the combined system to improve the
+  reliability of its balancing, navigation, and retrieval functions.
+</p>
+
+<h3>Conclusion</h3>
+
+<p>
+  The completed project demonstrated the integration of closed-loop control,
+  embedded systems, sensing, actuation, and autonomous decision-making on a
+  single mobile platform. The robot successfully balanced while moving,
+  navigated through a maze using environmental feedback, and retrieved an
+  object with its electromagnet. This project provided practical experience
+  developing a mechatronic system in which mechanical, electrical, and software
+  components had to operate together in real time.
+</p>
+
+<p align="center">
+  <a href="https://eliasreyess.github.io/eliasreyess.porfolio.io/">
+    <img src="assets/download.svg" alt="Back to portfolio" width="32">
+  </a>
+</p>
+
+
